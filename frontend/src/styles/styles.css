@@ -5,6 +5,8 @@ body {
     font-family: "Open Sans", "Arial", sans-serif;
 }
 
+/*-----------------------------------Header-------------------------------------------------*/
+
 .header {
     padding: 1em 1em 2.5em 1em;
     font-size: 20px;
@@ -20,6 +22,29 @@ body {
     float: right;
 }
 
+@media (max-width: 1198px) {
+    .header {
+        padding: 1em 1em 2.4em 1em;
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 747px) {
+    .header {
+        padding: 1em 1em 2em 1em;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 300px) {
+    .header {
+        padding: 1em 1em 2em 1em;
+        font-size: 14px;
+    }
+}
+
+/*-------------------------------------Clock-------------------------------------------------*/
+
 .clock {
     padding-top: 2.5em;
     text-align: center;
@@ -27,9 +52,25 @@ body {
     font-weight: bold;
 }
 
-.graph_image {
-    text-align: center;
+@media (max-width: 1198px) {
+    .clock {
+        font-size: 35px;
+    }
 }
+
+@media (max-width: 747px) {
+    .clock {
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 300px) {
+    .clock {
+        font-size: 25px;
+    }
+}
+
+/*-------------------------------------Authorization-------------------------------------------------*/
 
 .authorization {
     padding-top: 2em;
@@ -40,34 +81,74 @@ body {
     background-color: white;
 }
 
+#loginInput {
+    margin-bottom: 0.5em;
+}
+
 #inputAuthorizationBlock {
     padding-bottom: 1em;
     width: 25%;
     margin: 0 auto;
 }
 
-#authorizationButtons {
-    padding-bottom: 1em;
-}
-
-#loginInput {
-    margin-bottom: 0.5em;
-}
-
 #signInButton {
     margin-right: 0.5em;
 }
 
+#authorizationButtons {
+    padding-bottom: 1em;
+}
+
+.buttonAuth {
+    display: inline;
+}
+
+@media (max-width: 747px) {
+    #inputAuthorizationBlock {
+        width: 40%;
+    }
+}
+
+@media (max-width: 300px) {
+    #inputAuthorizationBlock {
+        width: 65%;
+    }
+
+    .buttonAuth {
+        display: block;
+    }
+
+    #signInButton {
+        margin-right: 0;
+        margin-bottom: 0.25em;
+    }
+}
+
+/*-------------------------------------Other-------------------------------------------------*/
+
+#firstRow {
+    display: flex;
+    width: 100%;
+}
+
 .content {
     padding: 0 0 20px;
-    vertical-align: top;
     background-color: white;
+    width: 100%;
+    margin-top: 1em;
+}
+
+#values {
+    margin-right: 1em;
 }
 
 .contentTable {
     padding: 0 0;
     vertical-align: top;
     background-color: white;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    width: 100%;
 }
 
 .plate_top {
@@ -93,6 +174,53 @@ body {
 .plate_top_title {
     font-size: 20px;
     font-weight: normal;
+}
+
+.buttonManage {
+    display: inline;
+}
+
+@media (max-width: 1198px) {
+    .plate_top_title {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 747px) {
+    .plate_top_title {
+        font-size: 16px;
+    }
+
+    #values {
+        margin-right: 0;
+    }
+
+    #firstRow {
+        display: block;
+    }
+}
+
+@media (max-width: 400px) {
+    .plate_top_title {
+        font-size: 14px;
+    }
+
+    #values {
+        margin-right: 0;
+    }
+
+    #firstRow {
+        display: block;
+    }
+
+    .buttonManage {
+        display: block;
+        margin-bottom: 0.5em;
+    }
+}
+
+.graph_image {
+    text-align: center;
 }
 
 #mainTable {
@@ -123,9 +251,10 @@ body {
 }
 
 #table {
-    width: 95%;
     position: relative;
 }
+
+/*-------------------------------------ResultTable-------------------------------------------------*/
 
 .scroll_container {
     position: relative;
@@ -139,4 +268,22 @@ body {
     width: 100%;
     text-align: center;
     border-collapse: collapse;
+}
+
+@media (max-width: 1198px) {
+    #resultTable {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 747px) {
+    #resultTable {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 300px) {
+    #resultTable {
+        font-size: 14px;
+    }
 }

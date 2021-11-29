@@ -23,6 +23,22 @@ const pointAPI = {
         })
     },
 
+    async updatePoints(r) {
+        let token = localStorage.getItem('user');
+        return axiosInstance.post('/update', {r}, {
+            headers: {
+                Authorization: 'Bearer ' + token
+            }
+        }).then(response => {
+            if (response.status === 200) {
+                resetPoints();
+                for (let i = 0; i < response.data.length; i++) {
+                    updatePoints(response.data[i]);
+                }
+            }
+        })
+    },
+
     async checkPointFromCanvas(x, y) {
         x = String(Math.floor(x * 100) / 100);
         y = String(Math.floor(y * 100) / 100);

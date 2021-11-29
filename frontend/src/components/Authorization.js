@@ -22,8 +22,12 @@ export const Authorization = () => {
                                type='password' view='default' size="m" placeholder={'Enter password...'}/>
                 </div>
                 <div id={'authorizationButtons'}>
-                    <Button id='signInButton' view="raised" size="l" onClick={authAPI.login}>Sign in</Button>
-                    <Button id='signUpButton' view="raised" size="l" onClick={authAPI.register}>Sign up</Button>
+                    <div className={'buttonAuth'}>
+                        <Button id='signInButton' view="raised" size="l" onClick={authAPI.login}>Sign in</Button>
+                    </div>
+                    <div className={'buttonAuth'}>
+                        <Button id='signUpButton' view="raised" size="l" onClick={authAPI.register}>Sign up</Button>
+                    </div>
                 </div>
                 <div className={'warnMessage'}>
                     <Text className={'warnMessageText'} color={'alert'}>{warnMessage}</Text>

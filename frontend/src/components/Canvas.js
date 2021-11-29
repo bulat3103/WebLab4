@@ -8,18 +8,20 @@ export class Canvas extends React.Component{
     componentDidMount() {
         const canvasGraph = document.getElementById('canvas');
         canvasGraph.addEventListener('click', function (event) {
-            const x = (event.offsetX - 150) / 300 * 12;
-            const y = (-event.offsetY + 150) / 300 * 12;
+            const x = (event.offsetX - 125) / 250 * 12;
+            const y = (-event.offsetY + 125) / 250 * 12;
+            console.log(x + " " + y)
             pointAPI.checkPointFromCanvas(x, y);
         })
         const common = combine([$rField, $points]);
         common.watch(data => draw(data));
+        $rField.watch(radius => pointAPI.updatePoints(radius));
         pointAPI.getPoints();
     }
 
     render() {
         return(
-            <canvas id={"canvas"} width={"300"} height={"300"}/>
+            <canvas id={"canvas"} width={"250"} height={"250"}/>
         )
     }
 }
@@ -52,7 +54,7 @@ function drawCanvas(radius) {
     ctx.closePath();
 
     let labels = ["5", "4", "3", "2", "1", " ", "-1", "-2", "-3", "-4", "-5"];
-    ctx.font = '15px Arial';
+    ctx.font = '13px Arial';
     ctx.fillText("y", xAxis + offsetAxis, offsetAxis * 2);
     ctx.moveTo(xAxis - offsetAxis / 2, offsetAxis);
     ctx.lineTo(xAxis, 0);
@@ -107,8 +109,8 @@ function drawPoints(points) {
         let x = points[i].x;
         let y = points[i].y;
         let hit = points[i].result;
-        y = 150 - 300 * y / 12;
-        x = 150 + 300 * x / 12;
+        y = 125 - 250 * y / 12;
+        x = 125 + 250 * x / 12;
         ctx.beginPath();
         ctx.moveTo(x, y);
         let color = "#fd3232";

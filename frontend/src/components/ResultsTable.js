@@ -14,7 +14,7 @@ export const ResultsTable = () => {
                         <th><Text className={"coords_col"} weight={"bold"}>Y</Text></th>
                         <th><Text className={"coords_col"} weight={"bold"}>R</Text></th>
                         <th><Text className={"time_col"} weight={"bold"}>Time</Text></th>
-                        <th><Text className={"hitres_col"} weight={"bold"}>Hit</Text></th>
+                        <th><Text className={"hit_col"} weight={"bold"}>Hit</Text></th>
                     </tr>
                 </thead>
                 <tbody>

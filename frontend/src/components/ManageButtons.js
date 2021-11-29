@@ -16,9 +16,15 @@ export const ManageButtons = () => {
     return (
         <div>
             <div className={'buttons'}>
-                <Button id='submitButton' view="raised" size="l" onClick={pointAPI.checkPoint}>Submit</Button>
-                <Button id='clearButton' view="raised" size="l" onClick={pointAPI.clearTable}>Clear</Button>
-                <Button id='exitButton' view="raised" size="l" onClick={logout}>Exit</Button>
+                <div className={'buttonManage'}>
+                    <Button id='submitButton' view="raised" size="l" onClick={pointAPI.checkPoint}>Submit</Button>
+                </div>
+                <div className={'buttonManage'}>
+                    <Button id='clearButton' view="raised" size="l" onClick={pointAPI.clearTable}>Clear</Button>
+                </div>
+                <div className={'buttonManage'}>
+                    <Button id='exitButton' view="raised" size="l" onClick={logout}>Exit</Button>
+                </div>
             </div>
             <div className={'warnMessage'}>
                 <Text className={'warnMessageText'} color={'alert'}>{warnMainPageMessage}</Text>

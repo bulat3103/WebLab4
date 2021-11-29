@@ -16,35 +16,31 @@ export const MainPage = () => {
         <div>
             {!isLogged && <Navigate to={"/"}/>}
             <Header/>
-            <table id={"mainTable"}>
-                <tbody>
-                <tr>
-                    <td className={'content'} id={'values'}>
+            <div id={"mainTable"}>
+                <div id={'firstRow'}>
+                    <div className={'content'} id={'values'}>
                         <div className={'plate_top'}>
-                            <Text color={"inverse"} weight={"bold"}>Values</Text>
+                            <Text color={"inverse"} weight={"bold"} className={'plate_top_title'}>Values</Text>
                         </div>
                         <Form/>
                         <ManageButtons/>
-                    </td>
-                    <td className={'content'} id={'graph'} rowSpan={'1'}>
+                    </div>
+                    <div className={'content'} id={'graph'}>
                         <div className={'plate_top'}>
-                            <Text color={"inverse"} weight={"bold"}>Graph</Text>
+                            <Text color={"inverse"} weight={"bold"} className={'plate_top_title'}>Graph</Text>
                         </div>
                         <div className={'graph_image'}>
                             <Canvas/>
                         </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td className={"contentTable"} id={"table"} colSpan={"2"}>
-                        <div className={'plate_top_table'}>
-                            <Text color={"inverse"} weight={"bold"}>Table</Text>
-                        </div>
-                        <ResultsTable/>
-                    </td>
-                </tr>
-                </tbody>
-            </table>
+                    </div>
+                </div>
+                <div className={"contentTable"} id={"table"}>
+                    <div className={'plate_top_table'}>
+                        <Text color={"inverse"} weight={"bold"} className={'plate_top_title'}>Table</Text>
+                    </div>
+                    <ResultsTable/>
+                </div>
+            </div>
         </div>
     )
 }
