@@ -5,13 +5,8 @@ import lombok.NoArgsConstructor;
 import lombok.NonNull;
 
 @Data
-public class PointDTO {
-    @NonNull
-    private double x;
-
-    @NonNull
-    private double y;
-
+@NoArgsConstructor
+public class RadiusDTO {
     @NonNull
     private double r;
 }

@@ -1,12 +1,10 @@
 package com.example.Web4.entities;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.ToString;
 
 import javax.persistence.*;
-import java.time.LocalDateTime;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 @Entity
@@ -38,8 +36,9 @@ public class Point {
         this.r = r;
         this.user = user;
         check();
-        LocalDateTime today = LocalDateTime.now();
-        time = today.toString();
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        Date date = new Date();
+        time = format.format(date);
     }
 
     public void check() {

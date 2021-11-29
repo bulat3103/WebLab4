@@ -39,7 +39,7 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter imple
                 .and()
                 .authorizeRequests()
                 .antMatchers("/register", "/login").permitAll()
-                .antMatchers("/points", "/*.js", "/*.json").hasRole("USER")
+                .antMatchers("/points", "/*.js", "/*.json", "/points/update").hasRole("USER")
                 .and()
                 .addFilterBefore(jwtFilter(), UsernamePasswordAuthenticationFilter.class);
     }
