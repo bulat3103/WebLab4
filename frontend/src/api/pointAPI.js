@@ -2,7 +2,7 @@ import axios from 'axios';
 import {resetPoints, updatePoints, updateWarnMainPageMessage} from "../model/events";
 
 const axiosInstance = axios.create({
-    baseURL: 'http://localhost:8080/points'
+    baseURL: 'http://localhost:9090/points'
 });
 
 function isNumeric(n) {

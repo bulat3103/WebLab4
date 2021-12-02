@@ -2,7 +2,7 @@ import axios from 'axios';
 import {updateIsLogged, updateWarnMessage} from "../model/events";
 
 const axiosInstance = axios.create({
-    baseURL: 'http://localhost:8080/'
+    baseURL: 'http://localhost:9090/'
 });
 
 const authAPI = {
@@ -54,7 +54,14 @@ const authAPI = {
                     } else {
                         alert("Непредвиденный ответ " + response.status + " от сервера!");
                     }
-                });
+                })
+                .catch((error) => {
+                    if (error.response.status === 400) {
+                        updateWarnMessage(error.response.data);
+                    } else {
+                        alert("Непредвиденный ответ " + error.response.status + " от сервера!");
+                    }
+                })
         }
     },
 }
